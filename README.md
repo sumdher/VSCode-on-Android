@@ -116,13 +116,13 @@ After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` 
 - Graphical Launch: Search for VSCode in the start menu and click it.
   > **Note:** It doesn't launch in my device (Samsung S24 Ultra) but it looks like the problem is general to proot implementations like this.
 
-   If it opens, skip to the next section.
+   If it opens, skip to the [next section](#Setting-up-Python-and-pip).
 - Terminal Launch: Run
   ```bash
   code
   ```
 
-  If it opens, skip to the next section.
+  If it opens, skip to the [next section](#Setting-up-Python-and-pip).
 
 ### Step 2: Resolve the `/proc/version: Permission denied` Error
 
@@ -176,7 +176,7 @@ You need to make sure that /usr/share/code/chrome-sandbox is owned by root and h
    sudo chmod 4755 /usr/share/code/chrome-sandbox
    ```
 
-This should essentially fix it. Try running `code` again after reloading Ubuntu (which I didn't do so I ran the following commands). If it launches, skip to the next section.
+This should essentially fix it. Try running `code` again after reloading Ubuntu (which I didn't do so I ran the following commands). If it launches, skip to the [next section](#Setting-up-Python-and-pip).
 
 - If it still doesn't launch, run:
    ```bash
