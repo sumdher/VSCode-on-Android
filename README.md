@@ -57,10 +57,12 @@ Open a **VNC Viewer**
 
 - Set it up by seting "localhost:1" for _Address_, and optionally a name.
 - Save it and open it, enter your user password that you have set during Ubuntu installation.
-- You should now see a GUI Ubuntu desktop. (You might want to change the picture quality to high it looks bad and sometimes not all icons load properly)
-
-
-
+- You should now see a GUI Ubuntu desktop. (You might want to change the picture quality to high if it looks bad. Sometimes, not all icons load properly)
+- After you are done, close the VNC viewer.
+- And make sure to stop the vncserver in the Termux Ubuntu shell where you logged in using ./start-andronx.sh by running:
+     ```bash
+      vncserver-stop
+      ```
 
 ## VSCode
 - Finally, there is a front-end **React server**.
