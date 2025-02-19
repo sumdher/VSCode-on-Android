@@ -133,9 +133,10 @@ After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` 
 
 ## Fixing Firefox
 
-**The problem:** The tabs crash, nothing can be opened.
+**The problem:** The tabs crash with Error: `Gah! Your tab just crashed!`, nothing can be opened.
 
-**The fix:**
+
+**The fix:** Found it [here](https://www.youtube.com/watch?v=_SIGynLjrjk).
 
 - Open Firefox and type `about:config` in the address bar and press enter.
 - Click "Accept the risk and Continue".
@@ -180,7 +181,7 @@ When you run `code`, you probably saw an error like:
    grep: /proc/version: Permission denied
    ```
 
-   This occurs because `/usr/bin/code` is trying to access `/proc/version` for WSL installation check, which is a protected file in Android.
+   This occurs because `/usr/bin/code` is trying to access `/proc/version` for a WSL installation check, which is a protected file in Android.
 
 **The fix:** Comment it out
 
@@ -244,7 +245,9 @@ Rather than run without sandboxing I'm aborting now.
    ```
    Replace the `/usr/share/code/chrome-sandbox` with the path in the error message of `code --verbose`, if it is different.
 
-This should essentially fix it. Try running `code` again after reloading Ubuntu (which I didn't do so I ran the following commands). If it launches, skip to the [next section](#Setting-up-Python-and-pip).
+This should essentially fix it. Try running `code` again after reloading Ubuntu (which I didn't do, so I ran the following commands regardless). 
+
+If it launches after this, skip to the [next section](#Setting-up-Python-and-pip).
 
 - If it still doesn't launch, run:
    ```bash
