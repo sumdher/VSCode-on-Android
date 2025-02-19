@@ -1,5 +1,6 @@
 # VSCode in Android
 
+This guide to run VSCode on Android.
 Android > Termux > (proot) Ubuntu > VSCode
 
 ## Prerequisites
@@ -7,103 +8,144 @@ Android > Termux > (proot) Ubuntu > VSCode
 - [**Termux**](https://f-droid.org/en/packages/com.termux/) from [**F-Droid**](https://f-droid.org/en/) (not from Play Store), or from its [official page](https://termux.dev/en/).
 - [**Andronix**](https://play.google.com/store/apps/details?id=studio.com.techriz.andronix&hl=en) from Play Store.
 - any **VNC viewer** from Play Store like [**RealVNC**](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&hl=en).
-- about 2€ in your bank account (for the modded distro in Andronix).
+- Approximately €2 in your account to purchase the modded distro in Andronix.
 
-Case for paid distro: Although there are a bunch of free distros in Andronix, the modded OSs come with preinstalled VSCode (and other applications). I tried installng them manually but it failed. Needs some specific pathching and they did it. 
-Spoiler: It also didn't work in the Modded OS. VSCode just did not open and there were some other issues. Here, I will share the patches I tried to make it work.
+
+> **Note:** Case for paid distro: Although Andronix offers several free distros, the modded OS versions include preinstalled VSCode (and other applications). I attempted a manual installation of VSCode on free distros, but it failed due to specific patching requirements. (Spoiler: even the modded OS had issues with VSCode launching, so below I share the patches I tried.)
+
+---
 
 ## Fixing Android 12 killing forked child processes
-Before anything, if you're using Android >=12, the maximum number of forked child processes that can be started by apps needs to be increaed from 32 to a big number. If this isn't done, Android just kills them. 
+On Android 12 or later, the maximum number of forked child processes an app can spawn is limited to 32. To prevent Android from killing these processes, you must increase this limit.
 - The fix is [here](https://docs.andronix.app/android-12/andronix-on-android-12-and-beyond), thanks to Andronix devs.
-- It's pretty verbose and detailed so just follow the steps for your specific case and you should be good.
+- It's pretty verbose and detailed so just follow the steps for your specific case and you should be good. 🎉
 
-## Update repo and packages in Termux
+## Update Repos and Packages in Termux
 
-Enter this in Termux:
+Open Termux and run:
    ```bash
    termux-change-repo
    ```
-Select "Single Mirror" and select your region.
-Update packages by:
+Select "Single Mirror" and choose your region.
+Update packages:
 
    ```bash
    pkg update
    pkg upgrade
    ```
+
+---
+
 ## Install the Ubuntu distro
 
-- In **Andronix**
+- In **Andronix**:
   - Navigate to "**Andronix Modded OS**" and select "**Ubuntu XFCE**".
-  - Pay and you will get the download link with keys to the distro. It will automatically copy a command to the clipboard.
-  - Open Termux and paste the command that will install the distro in the pwd.
-  - Follow the on screen instructions and it will be installed (note: the password you set for your user will be the VNC password).
+  - Complete the purchase to receive a download link and keys. The installation command will be automatically copied to your clipboard.
+- In **Termux**:
+  - Paste the copied command and it will install the distro in the pwd.
+  - Follow the on screen instructions.
+    > **Note:** The password you set for your user here during installation will also serve as your VNC password).
 
-## Launch Ubuntu
+## Launching Ubuntu
 
-Run the bash file that the above command generates (in the same directory) in Termux:
+- In Termux, run the bash file that the above command generates (in the same directory):
 
    ```bash
    ./start-andronix.sh
    ```
 Now you should be logged in as your user in Ubuntu.
 
-Do the routine:
+- Do the routine:
    ```bash
    sudo apt update
    sudo apt upgrade
    ```
-Start VNC Server:
+- Start the VNC Server:
    ```bash
    vncserver-start
    ```
 Select your desired resolution and it will start it at `localhost:1`.
 
-Open a **VNC Viewer** 
+- Open your VNC Viewer: 
 
-- Set it up by seting `localhost:1` for _Address_, and optionally a name.
+- Set the _address_ to `localhost:1`, and optionally give it a name.
 - Enter your user password to access it (the one you set during Ubuntu installation).
-- You should now see a GUI Ubuntu desktop. (You might want to change the _picture quality_ to _high_ if it looks bad. Sometimes, not all icons load properly).
-- And make sure to stop the vncserver after you are done (in the Termux Ubuntu shell where you logged in using `./start-andronx.sh`) by running:
+- You should now see a Ubuntu desktop.
+  > **Tip:** If the display quality is poor or some icons do not load properly, adjust the picture quality to high.
+- When finished, stop the VNC server by running in the Ubuntu shell:
   ```bash
    vncserver-stop
    ```
 - More details [here](https://docs.andronix.app/vnc/vnc-basics).
 
-## VSCode
-- Finally, there is a front-end **React server**.
+---
 
-# Fixing VSCode, Firefox...
+# Problems and Fixes
 
-Launch GUI desktop of Ubuntu from Termux by running `./start-andronix.sh` and `vncserver-start` and finally using a vnc viewer to connect to `localhost:1`.
-
-Take a stroll, you will see many applications preinstalled. Some of them work, some don't. VSCode is one of them. Firefox opens, but the tabs crash. 
+After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` and connecting to  `localhos:1` you may notice that while many preinstalled applications work, some do not. In particular, Firefox and VSCode may require fixes.
 
 ## Fixing Firefox
-- Type `about:config` in the address bar and hit enter. Press the button "Accept the risk and Continue".
-- In the search preferences bar, type `sandbox`.
-- Change `media.cubeb-sandbox` from `true` to `false`.
-- Change `security.sandbox.content.level` from `<num>` to `0`.
-- Reopen Firefox and it should work now.
+- Type `about:config` in the address bar and press enter.
+- Click "Accept the risk and Continue".
+- In the search preferences bar, type `sandbox` and,
+   - Change `media.cubeb-sandbox` from `true` to `false`.
+   - Change `security.sandbox.content.level` from `<num>` to `0`.
+- Restart Firefox. It should now work correctly. 🎉
+
+---
 
 ## Fixing VSCode
-- First of all, see if it runs well. It didn't work in my phone (Samsung S24 Ultra) but it looks like the problem is general to proot implementations like this.
-     - In "start" menu, search for VSCode and try clicking on it. If it opens, skip to the next section.
-     - In the terminal, run `code`. If it opens, skip to the next section.
-- If you are still reading this, VSCode did not launch (it only takes about 2-3 seconds).
-   - When you run `code`, you probably saw an error: `grep: /proc/version: Permission denied`.
-   - The reason is that `/usr/bin/code` needs to access `/proc/version` for WSL installation check. This needs to be commented out.
-     - Install your preferred editor, I used _gedit_ because it has GUI. Install it `sudp apt install <gedit>/<nano>...`.
-     - Open terminal and run `gedit /usr/bin/code` (or check get the correct path by running `which code`).
-     - You will see an `if` block: `if grep -qi Microsoft /proc/version && [ -z "$DONT_PROMPT_WSL_INSTALL" ];`
-     - Comment the whole block until `fi`. You can either add `#` before each line, or enclose the whole block within `: '` and `'`.
 
-After doing this, running `code` again, you will no longer see the _/proc/version: Permission denied_ error.
+### Step 1: Verify if VSCode crashes
 
-But it still doesn't launch. Run `code --verbose` and you will see the issue.
+> **Note:** From here on, run all the commands in the Ubuntu terminal, not Termux.
 
-You will see something like:
+- Graphical Launch: Search for VSCode in the start menu and click it.
+  > **Note:** It doesn't launch in my device (Samsung S24 Ultra) but it looks like the problem is general to proot implementations like this.
 
+   If it opens, skip to the next section.
+- Terminal Launch: Run
+  ```bash
+  code
+  ```
+
+  If it opens, skip to the next section.
+
+### Step 2: Resolve the `/proc/version: Permission denied` Error
+
+If you are still reading this, VSCode did not launch (it should only take about 2-3 seconds).
+
+When you run `code`, you probably saw an error like:
+     ```perl
+     grep: /proc/version: Permission denied`.
+     ```
+      This occurs because `/usr/bin/code` is trying to access `/proc/version` for WSL installation check.
+
+- Install your preferred text editor, (e.g., `gedit`):
+  ```bash
+  sudp apt install <gedit>/<nano>...`.
+  ```
+- Open  the file (you can confirm the path with `which code`):
+  ```bash
+  gedit /usr/bin/code
+  ```
+- Locate the `if` block with the condition:
+  ```bash
+  if grep -qi Microsoft /proc/version && [ -z "$DONT_PROMPT_WSL_INSTALL" ];
+  ```
+   Comment out the entire block up to the corresponding `fi`; either by adding `#` at the start of each line or enclosing the block in a shell comment (start with `: '` and end with `'`).
+
+After saving your changes, run `code` again, the `/proc/version: Permission denied` should be gone. 🎉
+
+### Step 3 Fixing thr SUID Sandbox Error
+
+If VSCode still doesn’t launch, run:
+```bash
+code --verbose
 ```
+You may see an error like:
+
+```vbnet
 [10548:0218/173116.917214:FATAL:setuid_sandbox_host.cc(163)]
 The SUID sandbox helper binary was found, but is not configured correctly.
 Rather than run without sandboxing I'm aborting now.
@@ -112,33 +154,36 @@ You need to make sure that /usr/share/code/chrome-sandbox is owned by root and h
 
 **The fix:**
 
-In terminal, run these 2 commands: (replace the path with the error message of `code --verbose` if it is different)
-```bash
-sudo chown root:root /usr/share/code/chrome-sandbox
-sudo chmod 4755 /usr/share/code/chrome-sandbox
-```
+- In terminal, run these 2 commands: (replace the path with the error message of `code --verbose` if it is different)
+   ```bash
+   sudo chown root:root /usr/share/code/chrome-sandbox
+   sudo chmod 4755 /usr/share/code/chrome-sandbox
+   ```
 
-This should essentially fix it. Try running `code` again after reloading Ubuntu (which I didn't do and it did not launch). If it launches, skip to the next section.
-If it still doesn't launch, run these in the terminal:
-```bash
-echo 'export DONT_PROMT_WSL_INSTALL=true' >> ~/.bashrc
-echo 'export ELECTRON_DISABLE_SANDBOX=1' >> ~/.bashrc
-source ~/.bashrc
-```
+This should essentially fix it. Try running `code` again after reloading Ubuntu (which I didn't do so I ran the following commands). If it launches, skip to the next section.
 
-Now when you run `code`, it should launch successfully 🎉
+- If it still doesn't launch, run:
+   ```bash
+   echo 'export DONT_PROMT_WSL_INSTALL=true' >> ~/.bashrc
+   echo 'export ELECTRON_DISABLE_SANDBOX=1' >> ~/.bashrc
+   source ~/.bashrc
+   ```
 
-## Setting up Python, pip
+Now when you run `code`, it should successfully launch VSCode. 🎉
 
-In VSCode, you install the necessary packages as per your need.
+---
 
-Also, you might want to install python<X.XX>, python<X.XX>-venv and pip globally with:
+## Setting up Python and pip
+
+In VSCode, install any necessary packages as per your need.
+
+Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) and `pip` globally with:
 
 - Add a new repository to manage Python installations. Run in terminal:
    ```bash
    sudo apt install -y software-properties-common
    ```
-- Add the Python repo:
+- Add the Python PPA:
    ```bash
    sudo add-apt-repository ppa:deadsnakes/ppa
    sudo apt update
@@ -148,11 +193,16 @@ Also, you might want to install python<X.XX>, python<X.XX>-venv and pip globally
    ```bash
    sudo ln -sf /usr/bin/python3 /usr/bin/python
    ```
--  Install pip and optionally, pythonX.XX-venv:
+-  Install `pip` and optionally, `pythonX.XX-venv`:
    ```bash
    sudo apt install python3-pip
    sudo apt install python3.11-venv
    ```
+- Install Jupyter if you want to work with notebooks:
+   ```bash
+   sudo apt install jupyter
+   ```
+---
 
 ## Jupyter kernel error
 
@@ -160,7 +210,7 @@ If you want to work with Python notebooks, you might want to test it by creating
 
 Select the Python kernel and interpretor. Print something in the first cell or run some python script.
 You will probably get an error like: 
-```
+```info
 Failed to start the Kernel. 
 /home/<user>/<workspace>/<python_dir>/lib/python3.11/site-packages/jupyter_client/localinterfaces.py:56: 
 UserWarning: Unexpected error discovering local network interfaces: 
@@ -174,18 +224,55 @@ It is a proot issue. Found it [here](https://github.com/termux/proot/issues/248)
 Summarizing,
 - Run in terminal:
    ```bash
-   touch skip_getifaddrs.c
-   gedit skip_getifaddrs.c
+   touch ~/jupyter_fix/skip_getifaddrs.c
+   gedit ~/jupyter_fix/skip_getifaddrs.c
    ```
 - Paste the following:
-```c
-#include <errno.h>
-#include <ifaddrs.h>
+   ```c
+   #include <errno.h>
+   #include <ifaddrs.h>
+   
+   int getifaddrs(struct ifaddrs **ifap) {
+       errno = EOPNOTSUPP;
+       return -1;
+   }
+   ```
+-  Compile as shared library
+   ```bash
+   gcc -shared -fPIC -o ~/jupyter_fix/skip_getifaddrs.so ~/jupyter_fix/skip_getifaddrs.c
+   ```
+- Navigate to VSCode.
+     - Ctrl+Shift+P, look for `Preferences: Open Settings (UI)`.
+     - Enter "env file" in the search bar, look for `Python: Env File`.
+     - Make sure the path is `${workspaceFolder}/.env`. If not, make it so.
+- In the workspace folder of VSCode, create a file ".env", if not already present, and add the line:
+     ```bash
+     LD_PRELOAD=~/jupyter_fix/skip_getifaddrs.so
+     ```
+- Restart VSCode and now the kernel should start without any errors. 🎉
+ (if you are using a virtual environment, make sure jupyter is installed to see the output in the notebook)
 
-int getifaddrs(struct ifaddrs **ifap) {
-    errno = EOPNOTSUPP;
-    return -1;
-}
-```
+# SSH-ing to a remote computer from Ubuntu from VSCode for remote development.
+
+Out of the box, there are no major issues. But there was something that needed to be fixed. Read on...
+
+I am not going to take you through SSH setup as it is out of scope for this project. But I had SSH keys in Ubuntu (not the Termux Android shell). I had a connection to a private VPN (using [OpenVPN](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en) app (Android)).
+
+I had also installed the necessry ssh extensions in VSCode. 
+
+**The problem:**
+- It successfully connects SSH-ically to remote computers, but it **fails to recognize existing kernels and virtual envs**.
+
+**The fix:**
+- After Connecting to the remote coumputer in VSCode, and after opening your workspace directory, make a directory `.vscode` and create a file in it `settings.json`.
+- in `settings.json`, add these lines:
+  ```json
+  {
+      "python.defaultInterpreterPath":"<path>/<to>/your>/<venv>/bin/pythonX"
+      "python.analysis.extraPaths": ["<path>/<to>/your>/<venv>/lib/pythonX.XX/site-packages"]
+  }
+  ```
+- Save it and restart VSCode. Now, everything should work well. 🎉
 
 
+Happy coding! Inka selavu 
