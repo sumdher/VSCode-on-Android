@@ -181,11 +181,11 @@ code --verbose
 ```
 You may see an error like:
 
-```ini
-[10548:0218/173116.917214:FATAL:setuid_sandbox_host.cc(163)]
+```diff
+- [10548:0218/173116.917214:FATAL:setuid_sandbox_host.cc(163)]
 The SUID sandbox helper binary was found, but is not configured correctly.
 Rather than run without sandboxing I'm aborting now.
-You need to make sure that /usr/share/code/chrome-sandbox is owned by root and has mode 4755.
++ You need to make sure that /usr/share/code/chrome-sandbox is owned by root and has mode 4755.
 ```
 
 **The fix:**
@@ -250,12 +250,12 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
 ## Fixing Jupyter Kernel Load error
 
 When working with Python notebooks in VSCode, you might encounter an error like:
-```bash
-Failed to start the Kernel. 
+```diff
+- Failed to start the Kernel. 
 /home/<user>/<workspace>/<python_dir>/lib/python3.11/site-packages/jupyter_client/localinterfaces.py:56: 
-UserWarning: Unexpected error discovering local network interfaces: 
-[Errno 13] Permission denied ret = f(**kwargs) Permission denied (src/ip_resolver.cpp:542). 
-View Jupyter log for further details.
+- UserWarning: Unexpected error discovering local network interfaces: 
+- [Errno 13] Permission denied ret = f(**kwargs) Permission denied (src/ip_resolver.cpp:542). 
++ View Jupyter log for further details.
 ```
 This is a known issue with proot.
 
