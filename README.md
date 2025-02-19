@@ -2,7 +2,7 @@
 
 Guide to run VSCode on Android.
 
-Android > Termux > (proot) Ubuntu > VSCode
+**Android** > **Termux** > (proot) **Ubuntu** > **VSCode**
 
 ## Prerequisites
 
