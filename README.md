@@ -237,7 +237,7 @@ This should essentially fix it. Try running `code` again after reloading Ubuntu 
    source ~/.bashrc
    ```
 
-Now when you run `code`, it should successfully launch VSCode on your Adroid device. 🦾🎉
+Now when you run `code`, it should successfully launch VSCode on your Android device. 🦾🎉
 
 > **Tip:** Sometimes, launching VSCode by clicking its icon in the start menu or desktop icon does not work.
 > In that case, right click on the icon and select "Edit launcher". Set `command` to  `/usr/bin/code` (or wherever the path of `code` is).
@@ -305,15 +305,15 @@ Out of the box, there are no major issues with this. But there was something tha
 I had also installed the necessry SSH extensions in VSCode. 
 
 **The problem:**
-- It successfully connects SSH-ically to remote computers, but it **fails to recognize existing kernels and virtual envs** in the remote compputers.
+- It successfully connects SSH-ically to remote computers, but it **fails to recognize existing kernels and virtual envs** in the remote computers.
 
 **The fix:**
-- After connecting to the remote coumputer in VSCode, in your workspace directory, make a directory `.vscode` and create a file in it `settings.json`.
+- After connecting to the remote computer in VSCode, in the workspace directory, make a new directory `.vscode` and create a file in it `settings.json`.
 - In `settings.json`, add these lines:
   ```json
   {
-      "python.defaultInterpreterPath":"<path>/<to>/your>/<venv>/bin/pythonX"
-      "python.analysis.extraPaths": ["<path>/<to>/your>/<venv>/lib/pythonX.XX/site-packages"]
+      "python.defaultInterpreterPath":"<path>/<to>/your>/<venv>/bin/python<X>"
+      "python.analysis.extraPaths": ["<path>/<to>/your>/<venv>/lib/python<X.XX>/site-packages"]
   }
   ```
 - Save it and restart VSCode. Now, everything should work well. 🎉
