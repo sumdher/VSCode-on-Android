@@ -14,8 +14,10 @@ Android > Termux > (proot) Ubuntu > VSCode
 > **Case for paid distro:** Although Andronix offers several free distros, the modded OS versions include preinstalled VSCode (and other applications). I attempted a manual installation of VSCode on free distros, but it failed due to specific patching requirements. (Spoiler: even the modded OS had issues with VSCode launching, so below I share the patches I tried.)
 
 ## Good-to-haves:
-- Keyboard and Mouse
-- Either an external display or laptop + Samsung DeX
+
+Either:
+ - A keyboard, a mouse and an external display
+ - or a laptop + Samsung DeX on both the devices
 ---
 
 ## Fixing Android 12 killing forked child processes
@@ -219,6 +221,8 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
    ```
 ---
 
+---
+
 ## Fixing Jupyter Kernel Load error
 
 When working with Python notebooks in VSCode, you might encounter an error like:
@@ -266,6 +270,8 @@ Summarizing,
 - Restart VSCode and now the kernel should start without any errors. 🎉
   >**Note:** If you are using a virtual environment, make sure `jupyter` and `ipywidgets` is installed or else, the output won't be shown.
 
+---
+
 # SSH-ing to a Remote Computer from Ubuntu via VSCode for Remote development.
 
 Out of the box, there are no major issues with this. But there was something that needed to be fixed. Read on...
@@ -291,6 +297,7 @@ I had also installed the necessry SSH extensions in VSCode.
 
 Happy coding! Inka selavu 
 
+---
 
 # Other apps
 
