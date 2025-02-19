@@ -13,13 +13,12 @@ Case for paid distro: Although there are a bunch of free distros in Andronix, th
 Spoiler: It also didn't work in the Modded OS. VSCode just did not open and there were some other issues. Here, I will share the patches I tried to make it work.
 
 ## Update repo and packages in Termux
-   
-1. Go to [GitHub](https://github.com) and sign in **Tokens (classic)**
-2. Enter this in Termux:
+
+Enter this in Termux:
    ```bash
    termux-change-repo
    ```
-Select "single" and select your region
+Select "Single Mirror" and select your region.
 Update packages by:
 
    ```bash
@@ -29,8 +28,10 @@ Update packages by:
 ## Install the Ubuntu distro
 
 - In **Andronix**
-  - Navigate to "Modded OS" and select "Ubuntu". Pay and you will get the download link which you paste and run in Termux.
-  - Follow the on screen instructions and it will be installed.
+  - Navigate to "**Andronix Modded OS**" and select "**Ubuntu XFCE**".
+  - Pay and you will get the download link with keys to the distro. It will automatically copy a command to the clipboard.
+  - Open Termux and paste the command that will install the distro in the pwd.
+  - Follow the on screen instructions and it will be installed (note: the password you set for your user will be the VNC password)
 
 ## Launch Ubuntu
 
@@ -46,6 +47,20 @@ Do the routine:
    sudo apt update
    sudo apt upgrade
    ```
+Start VNC Server:
+   ```bash
+   vncserver-start
+   ```
+Select your desired resolution and it will start it at localhost:1
+
+Open a **VNC Viewer** 
+
+- Set it up by seting "localhost:1" for _Address_, and optionally a name.
+- Save it and open it, enter your user password that you have set during Ubuntu installation.
+- You should now see a GUI Ubuntu desktop. (You might want to change the picture quality to high it looks bad and sometimes not all icons load properly)
+
+
+
 
 ## VSCode
 - Finally, there is a front-end **React server**.
