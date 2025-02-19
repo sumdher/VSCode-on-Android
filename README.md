@@ -160,11 +160,11 @@ The difference? Anywhere you see `code`, replace it with `codium` in **all** the
 
 ### Step 1: Verify if it launches
 
-- Graphical Launch: Search for VSCode (VSCodium) in the start menu and click it.
+- **Graphical launch**: Search for VSCode (VSCodium) in the start menu and click it.
   > **Note:** It doesn't launch in my device (Samsung S24 Ultra) but it looks like the problem is general to proot implementations like this.
 
    If it opens, skip to the [next section](#Setting-up-Python-and-pip).
-- Terminal Launch: Run
+- **Terminal Launch**: Run
   ```bash
   code
   # or `codium`; be mindful of this from here on...
@@ -262,7 +262,7 @@ Now when you run `code` (`codium`), it should successfully launch **VSCode** (**
 > In that case, right click on the icon and select "Edit launcher". Set `command` to  `/usr/bin/code` (or wherever the path of `code` is).
 > Now, it's good to go 🎉
 
-In VSCode/VSCodium, install any necessary packages as per your need like languages, Jupyter, remote-ssh, etc.
+In **VSCode**/**VSCodium**, install any necessary packages as per your need like languages, Jupyter, remote-ssh, etc.
 
 ---
 
