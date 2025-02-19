@@ -1,6 +1,6 @@
 # Visual Studio Code on Android (No root)
 
-Guide to run Visual Studio Code and VSCodium on Android.
+Guide to run Visual Studio Code and/or VSCodium on Android.
 
 **Android** > **Termux** > (proot) **Ubuntu** > **VSCode**/**VSCodium**
 
