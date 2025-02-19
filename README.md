@@ -1,4 +1,4 @@
-# VSCode in Android
+# Visual Studio Code on Android
 
 Guide to run VSCode on Android.
 
