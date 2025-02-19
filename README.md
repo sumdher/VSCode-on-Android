@@ -55,7 +55,7 @@ Update packages:
 
 - In **Andronix**:
   - Navigate to "**Andronix Modded OS**" and select "**Ubuntu XFCE**".
-  - Complete the purchase to receive a download link with keys. The installation command will be automatically copied to your clipboard.
+  - Complete the purchase to receive a download link with keys. The installation command will be automatically copied to the clipboard.
 - In **Termux**:
   - Paste the copied command and it will install the distro in the pwd.
   - Follow the on screen instructions.
