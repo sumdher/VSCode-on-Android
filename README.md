@@ -185,7 +185,7 @@ This should essentially fix it. Try running `code` again after reloading Ubuntu 
    source ~/.bashrc
    ```
 
-Now when you run `code`, it should successfully launch VSCode. 🎉
+Now when you run `code`, it should successfully launch VSCode on your Adroid device. 🦾🎉
 
 ---
 
@@ -296,7 +296,9 @@ I had also installed the necessry SSH extensions in VSCode.
 - Save it and restart VSCode. Now, everything should work well. 🎉
 
 
-Happy coding! Inka selavu 
+Happy coding! 🦾
+
+ఇంక సెలవు 
 
 ---
 
