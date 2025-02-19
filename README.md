@@ -36,7 +36,7 @@ Select "Single Mirror" and choose your region.
 Update packages:
 
    ```bash
-   pkg update
+   pkg update && \
    pkg upgrade
    ```
 
@@ -63,7 +63,7 @@ Now you should be logged in as your user in Ubuntu.
 
 - Do the routine:
    ```bash
-   sudo apt update
+   sudo apt update && \
    sudo apt upgrade
    ```
 - Start the VNC Server:
@@ -192,7 +192,7 @@ You need to make sure that /usr/share/code/chrome-sandbox is owned by root and h
 
 - In terminal, run these 2 commands: (replace the path with the error message of `code --verbose` if it is different)
    ```bash
-   sudo chown root:root /usr/share/code/chrome-sandbox
+   sudo chown root:root /usr/share/code/chrome-sandbox && \
    sudo chmod 4755 /usr/share/code/chrome-sandbox
    ```
 
@@ -200,8 +200,8 @@ This should essentially fix it. Try running `code` again after reloading Ubuntu 
 
 - If it still doesn't launch, run:
    ```bash
-   echo 'export DONT_PROMT_WSL_INSTALL=true' >> ~/.bashrc
-   echo 'export ELECTRON_DISABLE_SANDBOX=1' >> ~/.bashrc
+   echo 'export DONT_PROMT_WSL_INSTALL=true' >> ~/.bashrc && \
+   echo 'export ELECTRON_DISABLE_SANDBOX=1' >> ~/.bashrc && \
    source ~/.bashrc
    ```
 
@@ -227,8 +227,8 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
    ```
 - Add the Python PPA:
    ```bash
-   sudo add-apt-repository ppa:deadsnakes/ppa
-   sudo apt update
+   sudo add-apt-repository ppa:deadsnakes/ppa && \
+   sudo apt update && \
    sudo apt install python3.11
    ```
 -  If you want to create asymbolic link so that `python` points to `python3`:
@@ -237,7 +237,7 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
    ```
 -  Install `pip` and optionally, `pythonX.XX-venv`:
    ```bash
-   sudo apt install python3-pip
+   sudo apt install python3-pip && \
    sudo apt install python3.11-venv
    ```
 - Install Jupyter if you want to work with notebooks:
@@ -265,9 +265,9 @@ Found it [here](https://github.com/termux/proot/issues/248).
 Summarizing,
 - Run in terminal:
    ```bash
-   mkdir -p ~/jupyter_fix
-   touch ~/jupyter_fix/skip_getifaddrs.c
-   gedit ~/jupyter_fix/skip_getifaddrs.c
+   mkdir -p ~/jupyter_fix && \
+   touch ~/jupyter_fix/skip_getifaddrs.c && \
+   gedit ~/jupyter_fix/skip_getifaddrs.c && \
    ```
 - Paste the following in `~/jupyter_fix/skip_getifaddrs.c`:
    ```c
