@@ -18,7 +18,7 @@ After following this guide, you will be able to use the full-blown desktop app w
 - [**Termux**](https://f-droid.org/en/packages/com.termux/) from [**F-Droid**](https://f-droid.org/en/), or from its [official page](https://termux.dev/en/) (not from the Play Store).
 - [**Andronix**](https://play.google.com/store/apps/details?id=studio.com.techriz.andronix&hl=en) from Play Store.
 - any **VNC viewer** from Play Store like [**RealVNC**](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&hl=en).
-- Approximately €2 in your bank account to purchase the modded distro in Andronix.
+- About €2 in your bank account to purchase the modded distro in Andronix.
 
 > **Case for paid distro:** Although Andronix offers several free distros, the modded OS versions include preinstalled VSCode (and other applications). I attempted a manual installation of VSCode on free distros, but it failed due to specific patching requirements. (Spoiler: even the modded OS had issues with VSCode launching, so below I share the patches I tried.)
 
