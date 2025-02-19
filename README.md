@@ -1,8 +1,17 @@
 # Visual Studio Code on Android (No root)
 
-Guide to run VSCode on Android.
+Guide to run Visual Studio Code and VSCodium on Android.
 
-**Android** > **Termux** > (proot) **Ubuntu** > **VSCode**
+**Android** > **Termux** > (proot) **Ubuntu** > **VSCode**/**VSCodium**
+
+While there are other methods like:
+1. Cloud-based, frontend-only: [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev/).
+2. Full backend, local execution: [code-server](https://github.com/coder/code-server) (on a proot distro), which opens in the browser.
+3. An app on the Play Store [VScode for Android](https://play.google.com/store/apps/details?id=dev.environment.VScode_PaidR1&hl=en), which basically is a webapp, putting it in the same category as 1 or 2; not sure exactly what the devs did.
+
+What they all have in common is that they run in the browser. That's alright, but you can't do certain things like connect to a remote machine via SSH and develop remotely. Certain extensions are just not supported for web-based VSCode and remote-ssh is one of them. 
+
+After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities.
 
 ## Prerequisites
 
@@ -139,19 +148,24 @@ After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` 
 
 > **Note:** From here on, run all the commands in the Ubuntu terminal, not Termux.
 
-## Fixing VSCode
+## Fixing VSCode/VSCodium
+
+If you want to use **VSCodium** instead of VSCode, download and install it from its [official page](https://github.com/VSCodium/vscodium/releases).
+The problems they have are identical, and so are the fixes. They are exactly the same. 
+The difference? Anywhere you see `code`, replace it with `codium` in **all** the commands below:
 
 **The problem:** It doesn't launch. Many issues.
 
-### Step 1: Verify if VSCode launches
+### Step 1: Verify if it launches
 
-- Graphical Launch: Search for VSCode in the start menu and click it.
+- Graphical Launch: Search for VSCode (VSCodium) in the start menu and click it.
   > **Note:** It doesn't launch in my device (Samsung S24 Ultra) but it looks like the problem is general to proot implementations like this.
 
    If it opens, skip to the [next section](#Setting-up-Python-and-pip).
 - Terminal Launch: Run
   ```bash
   code
+  # or `codium` be mindful of this from here on...
   ```
 
   If it opens, skip to the [next section](#Setting-up-Python-and-pip).
@@ -237,7 +251,7 @@ This should essentially fix it. Try running `code` again after reloading Ubuntu 
    source ~/.bashrc
    ```
 
-Now when you run `code`, it should successfully launch VSCode on your Android device. 🦾🎉
+Now when you run `code` (`codium`), it should successfully launch **VSCode** (**VSCodium**) on your Android device. 🦾🎉
 
 > **Tip:** Sometimes, launching VSCode by clicking its icon in the start menu or desktop icon does not work.
 > In that case, right click on the icon and select "Edit launcher". Set `command` to  `/usr/bin/code` (or wherever the path of `code` is).
