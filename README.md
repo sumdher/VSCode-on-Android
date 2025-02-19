@@ -16,7 +16,8 @@ Android > Termux > (proot) Ubuntu > VSCode
 ## Good-to-haves:
 
 **Either:**
- - A keyboard, a mouse and an external display **or**
+ - A keyboard, a mouse and an external display
+**or**
  - a laptop + _Samsung DeX_ on both the devices
 ---
 
