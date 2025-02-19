@@ -259,7 +259,7 @@ Now when you run `code` (`codium`), it should successfully launch **VSCode** (**
 > In that case, right click on the icon and select "Edit launcher". Set `command` to  `/usr/bin/code` (or wherever the path of `code` is).
 > Now, it's good to go 🎉
 
-In VSCode, install any necessary packages as per your need like languages, Jupyter, remote-ssh, etc.
+In VSCode/VSCodium, install any necessary packages as per your need like languages, Jupyter, remote-ssh, etc.
 
 ---
 
@@ -308,7 +308,7 @@ Summarizing,
      LD_PRELOAD=~/jupyter_fix/skip_getifaddrs.so
      ```
 - Restart VSCode and now the kernel should start without any errors. 🎉
-  >**Note:** If you are using a virtual environment, make sure `jupyter` and `ipywidgets` is installed or else, the output won't be shown.
+  >**Note:** If you are using a virtual environment, make sure `jupyter` and `ipywidgets` are installed or else, the output won't be shown.
 
 ---
 
