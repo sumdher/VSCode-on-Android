@@ -142,6 +142,7 @@ After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` 
 - In the search preferences bar, type `sandbox` and,
    - Change `media.cubeb-sandbox` from `true` to `false`.
    - Change `security.sandbox.content.level` from `<num>` to `0`.
+
 Restart Firefox. It should now work correctly. 🎉
 
 ---
