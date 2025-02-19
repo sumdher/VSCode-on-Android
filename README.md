@@ -252,7 +252,7 @@ In VSCode, install any necessary packages as per your need like languages, Jupyt
 When working with Python notebooks in VSCode, you might encounter an error like:
 ```diff
 - Failed to start the Kernel. 
-/home/<user>/<workspace>/<python_dir>/lib/python3.11/site-packages/jupyter_client/localinterfaces.py:56: 
+/home/<user>/<workspace>/<py_venv_dir>/lib/python3.11/site-packages/jupyter_client/localinterfaces.py:56: 
 - UserWarning: Unexpected error discovering local network interfaces: 
 - [Errno 13] Permission denied ret = f(**kwargs) Permission denied (src/ip_resolver.cpp:542). 
 + View Jupyter log for further details.
