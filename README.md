@@ -188,7 +188,7 @@ When you run `code`, you probably saw an error like:
   ```bash
   sudp apt install gedit
   ```
-- Open `code` (you can confirm the path by running `which code`):
+- Edit the `code` file (you can confirm the path by running `which code`):
   ```bash
   gedit /usr/bin/code
   ```
