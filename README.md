@@ -287,4 +287,4 @@ Happy coding! Inka selavu
 
 Andronix patched some useful softwares: [browsers](https://docs.andronix.app/software/browsers), [GIMP](https://docs.andronix.app/software/gimp), [IDEs](https://docs.andronix.app/software/IDEs) and [Libre Office](https://docs.andronix.app/software/libre-office).
 
->**Note:** Before fixing this, I reinstalled VSCode from _IDEs_ page. It had thrown a new error: `Illegal instruction` which I believe had to do something with the CPU architecture of Samsung S24 ultra. So, back up the installed VSCode before installing it.
+>**Note:** Before fixing this, I reinstalled VSCode from _IDEs'_ page. It had thrown a new error: `Illegal instruction` which I believe has something to do with the CPU architecture of my device: Samsung S24 ultra. So, back up the installed VSCode before reinstalling it.
