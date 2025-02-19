@@ -166,7 +166,7 @@ The difference? Anywhere you see `code`, replace it with `codium` in **all** the
 - Terminal Launch: Run
   ```bash
   code
-  # or `codium` be mindful of this from here on...
+  # or `codium`; be mindful of this from here on...
   ```
 
   If it opens, skip to the [next section](#Setting-up-Python-and-pip).
