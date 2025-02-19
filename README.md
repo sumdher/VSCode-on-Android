@@ -147,14 +147,14 @@ When you run `code`, you probably saw an error like:
   ```
 - Locate this `if` block:
   ```bash
-  if grep -qi Microsoft /proc/version && [ -z "$DONT_PROMPT_WSL_INSTALL" ];
+  if grep -qi Microsoft /proc/version && [ -z "$DONT_PROMPT_WSL_INSTALL" ]; then
   ```
    Comment out the entire block up to the corresponding `fi`; either by adding `#` at the start of each line or enclosing the block in a shell comment (start with `: '` and end with `'` .
 
   Like:
 ```bash
 : '
-if grep -qi Microsoft /proc/version && [ -z true ]; then
+if grep -qi Microsoft /proc/version && [ -z "$DONT_PROMPT_WSL_INSTALL" ]; then
         echo To use Visual Studio Code with the Windows Subsystem for Linux, please install Visual Studio Code in Windows and uninstall the Linux version in WSL. You can then use the `code` command in a WSL terminal just as you would in a normal command prompt. 1>&2
         printf Do you want to continue anyway? [y/N]  1>&2
         read -r YN
