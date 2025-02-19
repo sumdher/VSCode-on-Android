@@ -187,6 +187,8 @@ This should essentially fix it. Try running `code` again after reloading Ubuntu 
 
 Now when you run `code`, it should successfully launch VSCode on your Adroid device. 🦾🎉
 
+> **Tip:** Sometimes, launching VSCode by clicking its icon in the start menu does not work. In that case, right click on the icon and select "Edit application". Set the path to `/usr/bin/code` (or wherever the path is)
+
 ---
 
 ## Setting up Python and pip
@@ -220,7 +222,6 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
    ```bash
    sudo apt install jupyter ipykernel
    ```
----
 
 ---
 
