@@ -142,7 +142,7 @@ After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` 
 - In the search preferences bar, type `sandbox` and,
    - Change `media.cubeb-sandbox` from `true` to `false`.
    - Change `security.sandbox.content.level` from `<num>` to `0`.
-- Restart Firefox. It should now work correctly. 🎉
+Restart Firefox. It should now work correctly. 🎉
 
 ---
 
@@ -187,7 +187,7 @@ When you run `code`, you probably saw an error like:
   ```bash
   sudp apt install gedit
   ```
-- Open `code` (you can confirm the path with `which code`):
+- Open `code` (you can confirm the path by running `which code`):
   ```bash
   gedit /usr/bin/code
   ```
