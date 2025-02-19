@@ -181,7 +181,7 @@ code --verbose
 ```
 You may see an error like:
 
-```vbnet
+```ini
 [10548:0218/173116.917214:FATAL:setuid_sandbox_host.cc(163)]
 The SUID sandbox helper binary was found, but is not configured correctly.
 Rather than run without sandboxing I'm aborting now.
