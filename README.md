@@ -72,7 +72,7 @@ Now you should be logged in as your user in Ubuntu.
    ```
 Select your desired resolution and it will start it at `localhost:1`.
 
-- Open your preferred VNC Viewer app: 
+### In your preferred VNC Viewer app: 
 
 - Set the _address_ to `localhost:1`, and optionally give it a name.
 - Enter your user password to access it (the one you set during Ubuntu installation).
