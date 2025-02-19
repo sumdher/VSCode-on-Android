@@ -7,7 +7,7 @@ Guide to run Visual Studio Code and VSCodium on Android.
 While there are other methods like:
 1. Cloud-based, frontend-only: [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev/).
 2. Full backend, local execution: [code-server](https://github.com/coder/code-server) (on a proot distro), which opens in the browser.
-3. An app on the Play Store [VScode for Android](https://play.google.com/store/apps/details?id=dev.environment.VScode_PaidR1&hl=en), which basically is a webapp, putting it in the same category as 1 or 2; not sure exactly what the devs did.
+3. An app on the Play Store [VScode for Android](https://play.google.com/store/apps/details?id=dev.environment.VScode_PaidR1&hl=en), which basically is a webapp, putting it in the same category as 1.
 
 What they all have in common is that they run in the browser. That's alright, but you can't do certain things like connect to a remote machine via SSH and develop remotely. Certain extensions are just not supported for web-based VSCode and remote-ssh is one of them. 
 
