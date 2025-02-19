@@ -187,7 +187,9 @@ This should essentially fix it. Try running `code` again after reloading Ubuntu 
 
 Now when you run `code`, it should successfully launch VSCode on your Adroid device. 🦾🎉
 
-> **Tip:** Sometimes, launching VSCode by clicking its icon in the start menu does not work. In that case, right click on the icon and select "Edit application". Set the path to `/usr/bin/code` (or wherever the path is)
+> **Tip:** Sometimes, launching VSCode by clicking its icon in the start menu or desktop icon does not work.
+> In that case, right click on the icon and select "Edit launcher". Set `command` to  `/usr/bin/code` (or wherever the path of `code` is)
+> 🎉🎉🎉
 
 ---
 
