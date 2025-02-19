@@ -86,6 +86,38 @@ Select your desired resolution and it will start it at `localhost:1`.
 
 ---
 
+## Also, you might want to set up: python, pip, etc.
+
+If not, skip directly to the [problems & fixes](#Problems-and-Fixes). 
+
+### Run these in a terminal:
+
+- Add a new repository to manage Python installations:
+   ```bash
+   sudo apt install -y software-properties-common
+   ```
+- Add the Python PPA:
+   ```bash
+   sudo add-apt-repository ppa:deadsnakes/ppa && \
+   sudo apt update && \
+   sudo apt install python3.11
+   ```
+-  If you want to create asymbolic link so that `python` points to `python3`:
+   ```bash
+   sudo ln -sf /usr/bin/python3 /usr/bin/python
+   ```
+-  Install `pip` and optionally, `pythonX.XX-venv`:
+   ```bash
+   sudo apt install python3-pip && \
+   sudo apt install python3.11-venv
+   ```
+- Install Jupyter if you want to work with notebooks:
+   ```bash
+   sudo apt install jupyter ipykernel
+   ```
+
+---
+
 # Problems and Fixes
 
 After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` and connecting to  `localhos:1` you may notice that while many preinstalled applications work, some do not. In particular, Firefox and VSCode may require fixes.
@@ -211,39 +243,7 @@ Now when you run `code`, it should successfully launch VSCode on your Adroid dev
 > In that case, right click on the icon and select "Edit launcher". Set `command` to  `/usr/bin/code` (or wherever the path of `code` is).
 > Now, it's good to go 🎉
 
----
-
-## Setting up Python and pip
-
-**No problems here**
-
-In VSCode, install any necessary packages as per your need.
-
-Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) and `pip` globally with:
-
-- Add a new repository to manage Python installations. Run in terminal:
-   ```bash
-   sudo apt install -y software-properties-common
-   ```
-- Add the Python PPA:
-   ```bash
-   sudo add-apt-repository ppa:deadsnakes/ppa && \
-   sudo apt update && \
-   sudo apt install python3.11
-   ```
--  If you want to create asymbolic link so that `python` points to `python3`:
-   ```bash
-   sudo ln -sf /usr/bin/python3 /usr/bin/python
-   ```
--  Install `pip` and optionally, `pythonX.XX-venv`:
-   ```bash
-   sudo apt install python3-pip && \
-   sudo apt install python3.11-venv
-   ```
-- Install Jupyter if you want to work with notebooks:
-   ```bash
-   sudo apt install jupyter ipykernel
-   ```
+In VSCode, install any necessary packages as per your need like languages, Jupyter, remote-ssh, etc.
 
 ---
 
