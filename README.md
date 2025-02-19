@@ -120,7 +120,7 @@ If not, skip directly to the [problems & fixes](#Problems-and-Fixes).
 
 # Problems and Fixes
 
-After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` and connecting to  `localhos:1` you may notice that while many preinstalled applications work, some do not. In particular, Firefox and VSCode may require fixes.
+After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` and connecting to  `localhos:1`), you may notice that while many preinstalled applications work, some do not. In particular, Firefox and VSCode may require fixes.
 
 ## Fixing Firefox
 
