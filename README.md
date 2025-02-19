@@ -15,7 +15,7 @@ Android > Termux > (proot) Ubuntu > VSCode
 
 ## Good-to-haves:
 - Keyboard and Mouse
-- Either an external display or Samsung DeX
+- Either an external display or laptop + Samsung DeX
 ---
 
 ## Fixing Android 12 killing forked child processes
@@ -123,7 +123,9 @@ When you run `code`, you probably saw an error like:
    grep: /proc/version: Permission denied
    ```
 
-   This occurs because `/usr/bin/code` is trying to access `/proc/version` for WSL installation check.
+   This occurs because `/usr/bin/code` is trying to access `/proc/version` for WSL installation check, which is a protected file in Android.
+
+**The fix:** Comment it out
 
 - Install your preferred text editor, (e.g., `gedit`):
   ```bash
@@ -204,14 +206,13 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
    ```
 - Install Jupyter if you want to work with notebooks:
    ```bash
-   sudo apt install jupyter
+   sudo apt install jupyter ipykernel
    ```
 ---
 
 ## Jupyter kernel error
 
-When working with Python notebooks in VSCode, you might encounter an error like
-
+When working with Python notebooks in VSCode, you might encounter an error like:
 ```bash
 Failed to start the Kernel. 
 /home/<user>/<workspace>/<python_dir>/lib/python3.11/site-packages/jupyter_client/localinterfaces.py:56: 
@@ -241,11 +242,11 @@ Summarizing,
        return -1;
    }
    ```
--  Compile as a shared library
+-  Compile it as a shared library
    ```bash
    gcc -shared -fPIC -o ~/jupyter_fix/skip_getifaddrs.so ~/jupyter_fix/skip_getifaddrs.c
    ```
-- Navigate to VSCode.
+- Navigate to VSCode
      - Press `Ctrl+Shift+P`, look for `Preferences: Open Settings (UI)`.
      - Search for "env file", look for `Python: Env File`.
      - Ensure the path is `${workspaceFolder}/.env`. If not, make it so.
@@ -260,7 +261,7 @@ Summarizing,
 
 Out of the box, there are no major issues. But there was something that needed to be fixed. Read on...
 
-I am not going to take you through SSH setup as it is out of scope of this guide. But I had SSH keys setup in Ubuntu (not Termux Android). I had a connection to a private VPN (using [OpenVPN](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en) app (Android)).
+**Context:** I had SSH keys setup in Ubuntu (not Termux Android). I had a connection to a private VPN (using [OpenVPN](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en) app (on Android)).
 
 I had also installed the necessry SSH extensions in VSCode. 
 
@@ -280,3 +281,10 @@ I had also installed the necessry SSH extensions in VSCode.
 
 
 Happy coding! Inka selavu 
+
+
+# Other apps
+
+Andronix patched some useful softwares: [browsers](https://docs.andronix.app/software/browsers), [GIMP](https://docs.andronix.app/software/gimp), [IDEs](https://docs.andronix.app/software/IDEs) and [Libre Office](https://docs.andronix.app/software/libre-office).
+
+>**Note:** Before fixing this, I reinstalled VSCode from _IDEs_ page. It had thrown a new error: `Illegal instruction` which I believe had to do something with the CPU architecture of Samsung S24 ultra. So, back up the installed VSCode before installing it.
