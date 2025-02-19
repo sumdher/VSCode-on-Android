@@ -77,7 +77,7 @@ Select your desired resolution and it will start it at `localhost:1`.
 - Set the _address_ to `localhost:1`, and optionally give it a name.
 - Enter your user password to access it (the one you set during Ubuntu installation).
 - You should now see a Ubuntu desktop.
-  > **Tip:** If the display quality is poor or some icons do not load properly, adjust the picture quality to high.
+  > **Tip:** If the display quality is poor or some icons do not load properly, **set** the **picture quality** to **high**.
 - When finished, stop the VNC server by running in the Ubuntu shell:
   ```bash
    vncserver-stop
