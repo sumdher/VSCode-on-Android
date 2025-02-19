@@ -187,7 +187,7 @@ When you run `code`, you probably saw an error like:
 
 - Install your preferred text editor, (e.g., `gedit`):
   ```bash
-  sudp apt install gedit
+  sudo apt install gedit
   ```
 - Edit the `code` file (you can confirm the path by running `which code`):
   ```bash
