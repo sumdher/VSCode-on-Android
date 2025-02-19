@@ -15,9 +15,9 @@ Android > Termux > (proot) Ubuntu > VSCode
 
 ## Good-to-haves:
 
-**Either:**
+ **Either:**
  - A **keyboard**, a **mouse** and an **external display**
- - **OR** a **laptop** + **Samsung DeX** on both the devices
+ - OR, a **laptop** + **Samsung DeX** on both the devices
 ---
 
 ## Fixing Android 12 killing forked child processes
