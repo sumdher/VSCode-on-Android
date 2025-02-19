@@ -6,7 +6,7 @@ Android > Termux > (proot) Ubuntu > VSCode
 
 ## Prerequisites
 
-- [**Termux**](https://f-droid.org/en/packages/com.termux/) from [**F-Droid**](https://f-droid.org/en/) (not from Play Store), or from its [official page](https://termux.dev/en/).
+- [**Termux**](https://f-droid.org/en/packages/com.termux/) from [**F-Droid**](https://f-droid.org/en/), or from its [official page](https://termux.dev/en/) (not from the Play Store).
 - [**Andronix**](https://play.google.com/store/apps/details?id=studio.com.techriz.andronix&hl=en) from Play Store.
 - any **VNC viewer** from Play Store like [**RealVNC**](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&hl=en).
 - Approximately €2 in your bank account to purchase the modded distro in Andronix.
