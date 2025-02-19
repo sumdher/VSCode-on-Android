@@ -312,7 +312,7 @@ Summarizing,
 
 ---
 
-# SSH-ing to a Remote Computer via VSCode/VSCodium for Remote development.
+# SSH-ing to a Remote Computer via VSCode/VSCodium for Remote development
 
 Out of the box, there are no major issues with this. But there was something that needed to be fixed. Read on...
 
