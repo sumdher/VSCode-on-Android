@@ -151,7 +151,7 @@ Restart Firefox. It should now work correctly. 🎉
 
 ## Fixing VSCode/VSCodium
 
-If you want to use **VSCodium** instead of VSCode, download and install it from [official source](https://github.com/VSCodium/vscodium/releases).
+If you want to use **VSCodium** instead of VSCode, download from the [official source](https://github.com/VSCodium/vscodium/releases) and install it.
 The problems they have are identical, and so are the fixes. They are exactly the same. 
 The difference? Anywhere you see `code`, replace it with `codium` in **all** the commands below:
 
