@@ -189,7 +189,7 @@ Now when you run `code`, it should successfully launch VSCode on your Adroid dev
 
 > **Tip:** Sometimes, launching VSCode by clicking its icon in the start menu or desktop icon does not work.
 > In that case, right click on the icon and select "Edit launcher". Set `command` to  `/usr/bin/code` (or wherever the path of `code` is).
-> Now, it good to go 🎉
+> Now, it's good to go 🎉
 
 ---
 
