@@ -149,7 +149,7 @@ When you run `code`, you probably saw an error like:
   ```bash
   if grep -qi Microsoft /proc/version && [ -z "$DONT_PROMPT_WSL_INSTALL" ];
   ```
-   Comment out the entire block up to the corresponding `fi`; either by adding `#` at the start of each line or enclosing the block in a shell comment (start with `: '` and end with `'`).
+   Comment out the entire block up to the corresponding `fi`; either by adding `#` at the start of each line or enclosing the block in a shell comment (start with `: '` and end with `'` .
 
 After saving the changes, run `code` again, the `/proc/version: Permission denied` should be gone. 🎉
 
