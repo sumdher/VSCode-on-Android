@@ -151,6 +151,26 @@ When you run `code`, you probably saw an error like:
   ```
    Comment out the entire block up to the corresponding `fi`; either by adding `#` at the start of each line or enclosing the block in a shell comment (start with `: '` and end with `'` .
 
+  Like:
+```bash
+: '
+if grep -qi Microsoft /proc/version && [ -z true ]; then
+        echo To use Visual Studio Code with the Windows Subsystem for Linux, please install Visual Studio Code in Windows and uninstall the Linux version in WSL. You can then use the `code` command in a WSL terminal just as you would in a normal command prompt. 1>&2
+        printf Do you want to continue anyway? [y/N]  1>&2
+        read -r YN
+        YN=
+        case  in
+                y | yes )
+                ;;
+                * )
+                        exit 1
+                ;;
+        esac
+        echo To no longer see this prompt, start Visual Studio Code with the environment variable DONT_PROMPT_WSL_INSTALL defined. 1>&2
+fi
+'
+```
+
 After saving the changes, run `code` again, the `/proc/version: Permission denied` should be gone. 🎉
 
 ### Step 3 Fixing the SUID Sandbox Error
