@@ -321,7 +321,7 @@ I had also installed the necessry SSH extensions in VSCode.
 
 Happy coding! 🦾
 
-ఇంక సెలవు 
+ఇంక సెలవు 🚀
 
 ---
 
