@@ -11,7 +11,7 @@ Android > Termux > (proot) Ubuntu > VSCode
 - any **VNC viewer** from Play Store like [**RealVNC**](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&hl=en).
 - Approximately €2 in your bank account to purchase the modded distro in Andronix.
 
-> **Note:** Case for paid distro: Although Andronix offers several free distros, the modded OS versions include preinstalled VSCode (and other applications). I attempted a manual installation of VSCode on free distros, but it failed due to specific patching requirements. (Spoiler: even the modded OS had issues with VSCode launching, so below I share the patches I tried.)
+> **Case for paid distro:** Although Andronix offers several free distros, the modded OS versions include preinstalled VSCode (and other applications). I attempted a manual installation of VSCode on free distros, but it failed due to specific patching requirements. (Spoiler: even the modded OS had issues with VSCode launching, so below I share the patches I tried.)
 
 ## Good-to-haves:
 - Keyboard and Mouse
