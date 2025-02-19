@@ -58,7 +58,7 @@ Update packages:
   - Complete the purchase to receive a download link with keys. The installation command will be automatically copied to the clipboard.
 - In **Termux**:
   - Paste the copied command and it will install the distro in the pwd.
-  - Follow the on screen instructions.
+  - Follow the on-screen instructions.
     > **Note:** The password you set for your user here during installation will also serve as your VNC password.
 
 ## Launching Ubuntu
