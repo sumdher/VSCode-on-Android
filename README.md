@@ -11,7 +11,7 @@ While there are other methods like:
 
 What they all have in common is that they run in the browser. That's alright, but you can't do certain things like connect to a remote machine via SSH and develop remotely. Certain extensions are just not supported by web-based VSCode and remote-ssh is one of them. 
 
-After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities.
+After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities like remote development via SSH.
 
 ## Prerequisites
 
