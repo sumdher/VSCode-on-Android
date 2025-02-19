@@ -285,8 +285,7 @@ Summarizing,
 - Run in terminal:
    ```bash
    mkdir -p ~/jupyter_fix && \
-   touch ~/jupyter_fix/skip_getifaddrs.c && \
-   gedit ~/jupyter_fix/skip_getifaddrs.c && \
+   gedit ~/jupyter_fix/skip_getifaddrs.c
    ```
 - Paste the following in `~/jupyter_fix/skip_getifaddrs.c`:
    ```c
