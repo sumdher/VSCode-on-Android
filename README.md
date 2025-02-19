@@ -88,7 +88,12 @@ Select your desired resolution and it will start it at `localhost:1`.
 After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` and connecting to  `localhos:1` you may notice that while many preinstalled applications work, some do not. In particular, Firefox and VSCode may require fixes.
 
 ## Fixing Firefox
-- Type `about:config` in the address bar and press enter.
+
+**The problem:** The tabs crash, nothing can be opened.
+
+**The fix:**
+
+- Open Firefox and type `about:config` in the address bar and press enter.
 - Click "Accept the risk and Continue".
 - In the search preferences bar, type `sandbox` and,
    - Change `media.cubeb-sandbox` from `true` to `false`.
@@ -97,11 +102,13 @@ After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` 
 
 ---
 
+> **Note:** From here on, run all the commands in the Ubuntu terminal, not Termux.
+
 ## Fixing VSCode
 
-### Step 1: Verify if VSCode crashes
+**The problem:** It doesn't launch. Many issues.
 
-> **Note:** From here on, run all the commands in the Ubuntu terminal, not Termux.
+### Step 1: Verify if VSCode launches
 
 - Graphical Launch: Search for VSCode in the start menu and click it.
   > **Note:** It doesn't launch in my device (Samsung S24 Ultra) but it looks like the problem is general to proot implementations like this.
@@ -181,6 +188,8 @@ Now when you run `code`, it should successfully launch VSCode. 🎉
 
 ## Setting up Python and pip
 
+**No problems here**
+
 In VSCode, install any necessary packages as per your need.
 
 Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) and `pip` globally with:
@@ -210,7 +219,7 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
    ```
 ---
 
-## Jupyter kernel error
+## Fixing Jupyter Kernel Load error
 
 When working with Python notebooks in VSCode, you might encounter an error like:
 ```bash
@@ -259,7 +268,7 @@ Summarizing,
 
 # SSH-ing to a Remote Computer from Ubuntu via VSCode for Remote development.
 
-Out of the box, there are no major issues. But there was something that needed to be fixed. Read on...
+Out of the box, there are no major issues with this. But there was something that needed to be fixed. Read on...
 
 **Context:** I had SSH keys setup in Ubuntu (not Termux Android). I had a connection to a private VPN (using [OpenVPN](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en) app (on Android)).
 
