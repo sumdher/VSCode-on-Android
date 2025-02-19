@@ -236,11 +236,12 @@ Rather than run without sandboxing I'm aborting now.
 
 **The fix:**
 
-- In terminal, run these 2 commands: (replace the path with the error message of `code --verbose` if it is different)
+- In terminal, run these 2 commands:
    ```bash
    sudo chown root:root /usr/share/code/chrome-sandbox && \
    sudo chmod 4755 /usr/share/code/chrome-sandbox
    ```
+   Replace the `/usr/share/code/chrome-sandbox` with the path in the error message of `code --verbose`, if it is different.
 
 This should essentially fix it. Try running `code` again after reloading Ubuntu (which I didn't do so I ran the following commands). If it launches, skip to the [next section](#Setting-up-Python-and-pip).
 
@@ -310,7 +311,7 @@ Summarizing,
 
 ---
 
-# SSH-ing to a Remote Computer from Ubuntu via VSCode for Remote development.
+# SSH-ing to a Remote Computer via VSCode/VSCodium for Remote development.
 
 Out of the box, there are no major issues with this. But there was something that needed to be fixed. Read on...
 
