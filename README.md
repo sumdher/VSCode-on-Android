@@ -161,7 +161,7 @@ The difference? Anywhere you see `code`, replace it with `codium` in **all** the
 ### Step 1: Verify if it launches
 
 - **Graphical launch**: Search for VSCode (VSCodium) in the start menu and click it.
-  > **Note:** It doesn't launch in my device (Samsung S24 Ultra) but it looks like the problem is general to proot implementations like this.
+  > **Note:** It doesn't launch in my device (Samsung S24 Ultra) but it looks like the problem is general to proot installations.
 
    If it opens, skip to the [next section](#Setting-up-Python-and-pip).
 - **Terminal Launch**: Run
@@ -314,7 +314,7 @@ Summarizing,
 
 ---
 
-# SSH-ing to a Remote Computer via VSCode/VSCodium for Remote development
+# SSH-ing into a Remote Computer via VSCode/VSCodium for Remote development
 
 Out of the box, there are no major issues with this. But there was something that needed to be fixed. Read on...
 
@@ -326,7 +326,7 @@ I had also installed the necessry SSH extensions in VSCode.
 - It successfully connected SSH-ically to the remote computer, but it **fails to recognize existing kernels and virtual envs** in the remote computer.
 
 **The fix:**
-- After connecting to the remote computer in VSCode, in the workspace directory, make a new directory `.vscode` and create a file in it `settings.json`.
+- After SSH-ing into the remote computer in VSCode, in the workspace directory, make a new directory `.vscode` and create a file in it `settings.json`.
 - In `settings.json`, add these lines:
 
   > **Note:** Replace the path and version with the actual path of `venv` and its python version in the remote computer)
