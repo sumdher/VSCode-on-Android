@@ -1,6 +1,7 @@
 # VSCode in Android
 
-This guide to run VSCode on Android.
+Guide to run VSCode on Android.
+
 Android > Termux > (proot) Ubuntu > VSCode
 
 ## Prerequisites
@@ -8,11 +9,13 @@ Android > Termux > (proot) Ubuntu > VSCode
 - [**Termux**](https://f-droid.org/en/packages/com.termux/) from [**F-Droid**](https://f-droid.org/en/) (not from Play Store), or from its [official page](https://termux.dev/en/).
 - [**Andronix**](https://play.google.com/store/apps/details?id=studio.com.techriz.andronix&hl=en) from Play Store.
 - any **VNC viewer** from Play Store like [**RealVNC**](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&hl=en).
-- Approximately €2 in your account to purchase the modded distro in Andronix.
-
+- Approximately €2 in your bank account to purchase the modded distro in Andronix.
 
 > **Note:** Case for paid distro: Although Andronix offers several free distros, the modded OS versions include preinstalled VSCode (and other applications). I attempted a manual installation of VSCode on free distros, but it failed due to specific patching requirements. (Spoiler: even the modded OS had issues with VSCode launching, so below I share the patches I tried.)
 
+## Good-to-haves:
+- Keyboard and Mouse
+- Either an external display or Samsung DeX
 ---
 
 ## Fixing Android 12 killing forked child processes
@@ -44,7 +47,7 @@ Update packages:
 - In **Termux**:
   - Paste the copied command and it will install the distro in the pwd.
   - Follow the on screen instructions.
-    > **Note:** The password you set for your user here during installation will also serve as your VNC password).
+    > **Note:** The password you set for your user here during installation will also serve as your VNC password.
 
 ## Launching Ubuntu
 
@@ -116,28 +119,29 @@ After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` 
 If you are still reading this, VSCode did not launch (it should only take about 2-3 seconds).
 
 When you run `code`, you probably saw an error like:
-     ```perl
-     grep: /proc/version: Permission denied`.
-     ```
-      This occurs because `/usr/bin/code` is trying to access `/proc/version` for WSL installation check.
+   ```perl
+   grep: /proc/version: Permission denied
+   ```
+
+   This occurs because `/usr/bin/code` is trying to access `/proc/version` for WSL installation check.
 
 - Install your preferred text editor, (e.g., `gedit`):
   ```bash
-  sudp apt install <gedit>/<nano>...`.
+  sudp apt install gedit
   ```
-- Open  the file (you can confirm the path with `which code`):
+- Open `code` (you can confirm the path with `which code`):
   ```bash
   gedit /usr/bin/code
   ```
-- Locate the `if` block with the condition:
+- Locate this `if` block:
   ```bash
   if grep -qi Microsoft /proc/version && [ -z "$DONT_PROMPT_WSL_INSTALL" ];
   ```
    Comment out the entire block up to the corresponding `fi`; either by adding `#` at the start of each line or enclosing the block in a shell comment (start with `: '` and end with `'`).
 
-After saving your changes, run `code` again, the `/proc/version: Permission denied` should be gone. 🎉
+After saving the changes, run `code` again, the `/proc/version: Permission denied` should be gone. 🎉
 
-### Step 3 Fixing thr SUID Sandbox Error
+### Step 3 Fixing the SUID Sandbox Error
 
 If VSCode still doesn’t launch, run:
 ```bash
@@ -206,28 +210,28 @@ Also, you might want to install `python<X.XX>`, `python<X.XX>-venv`(optional) an
 
 ## Jupyter kernel error
 
-If you want to work with Python notebooks, you might want to test it by creating a _.ipynb_ file.
+When working with Python notebooks in VSCode, you might encounter an error like
 
-Select the Python kernel and interpretor. Print something in the first cell or run some python script.
-You will probably get an error like: 
-```info
+```bash
 Failed to start the Kernel. 
 /home/<user>/<workspace>/<python_dir>/lib/python3.11/site-packages/jupyter_client/localinterfaces.py:56: 
 UserWarning: Unexpected error discovering local network interfaces: 
 [Errno 13] Permission denied ret = f(**kwargs) Permission denied (src/ip_resolver.cpp:542). 
 View Jupyter log for further details.
 ```
+This is a known issue with proot.
 
 **The fix**:
-It is a proot issue. Found it [here](https://github.com/termux/proot/issues/248).
+Found it [here](https://github.com/termux/proot/issues/248).
 
 Summarizing,
 - Run in terminal:
    ```bash
+   mkdir -p ~/jupyter_fix
    touch ~/jupyter_fix/skip_getifaddrs.c
    gedit ~/jupyter_fix/skip_getifaddrs.c
    ```
-- Paste the following:
+- Paste the following in `~/jupyter_fix/skip_getifaddrs.c`:
    ```c
    #include <errno.h>
    #include <ifaddrs.h>
@@ -237,35 +241,35 @@ Summarizing,
        return -1;
    }
    ```
--  Compile as shared library
+-  Compile as a shared library
    ```bash
    gcc -shared -fPIC -o ~/jupyter_fix/skip_getifaddrs.so ~/jupyter_fix/skip_getifaddrs.c
    ```
 - Navigate to VSCode.
-     - Ctrl+Shift+P, look for `Preferences: Open Settings (UI)`.
-     - Enter "env file" in the search bar, look for `Python: Env File`.
-     - Make sure the path is `${workspaceFolder}/.env`. If not, make it so.
-- In the workspace folder of VSCode, create a file ".env", if not already present, and add the line:
+     - Press `Ctrl+Shift+P`, look for `Preferences: Open Settings (UI)`.
+     - Search for "env file", look for `Python: Env File`.
+     - Ensure the path is `${workspaceFolder}/.env`. If not, make it so.
+- In the workspace folder of VSCode, create (or edit) a file named `.env`, and add the line:
      ```bash
      LD_PRELOAD=~/jupyter_fix/skip_getifaddrs.so
      ```
 - Restart VSCode and now the kernel should start without any errors. 🎉
- (if you are using a virtual environment, make sure jupyter is installed to see the output in the notebook)
+  >**Note:** If you are using a virtual environment, make sure `jupyter` and `ipywidgets` is installed or else, the output won't be shown.
 
-# SSH-ing to a remote computer from Ubuntu from VSCode for remote development.
+# SSH-ing to a Remote Computer from Ubuntu via VSCode for Remote development.
 
 Out of the box, there are no major issues. But there was something that needed to be fixed. Read on...
 
-I am not going to take you through SSH setup as it is out of scope for this project. But I had SSH keys in Ubuntu (not the Termux Android shell). I had a connection to a private VPN (using [OpenVPN](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en) app (Android)).
+I am not going to take you through SSH setup as it is out of scope of this guide. But I had SSH keys setup in Ubuntu (not Termux Android). I had a connection to a private VPN (using [OpenVPN](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en) app (Android)).
 
-I had also installed the necessry ssh extensions in VSCode. 
+I had also installed the necessry SSH extensions in VSCode. 
 
 **The problem:**
-- It successfully connects SSH-ically to remote computers, but it **fails to recognize existing kernels and virtual envs**.
+- It successfully connects SSH-ically to remote computers, but it **fails to recognize existing kernels and virtual envs** in the remote compputers.
 
 **The fix:**
-- After Connecting to the remote coumputer in VSCode, and after opening your workspace directory, make a directory `.vscode` and create a file in it `settings.json`.
-- in `settings.json`, add these lines:
+- After connecting to the remote coumputer in VSCode, in your workspace directory, make a directory `.vscode` and create a file in it `settings.json`.
+- In `settings.json`, add these lines:
   ```json
   {
       "python.defaultInterpreterPath":"<path>/<to>/your>/<venv>/bin/pythonX"
