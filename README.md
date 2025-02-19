@@ -33,7 +33,7 @@ After following this guide, you will be able to use the full-blown desktop app w
 ## Fixing Android 12+ killing forked child processes
 On Android >=**12**, the maximum number of forked child processes an app can spawn is limited to 32. To prevent Android from killing these processes, you must increase this limit.
 - The fix is [here](https://docs.andronix.app/android-12/andronix-on-android-12-and-beyond), thanks to Andronix devs.
-- It's pretty verbose and detailed so just follow the steps for your specific case and you should be good. 🎉
+- It's pretty verbose and exhaustive so just follow the steps for your specific case and you should be good. 🎉
 
 ## Update Repos and Packages in Termux
 
