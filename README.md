@@ -26,7 +26,7 @@ In contrast, running desktop **VSCode** on **Ubuntu** proot-ed in **Termux** on 
 
 # The Guide
 
-Nonetheless, here's the Neanderthal guide to install the desktop version of VSCode/VSCodium and then SSH into a remote desktop. 
+Nonetheless, here's the guide to install the desktop version of VSCode/VSCodium and then SSH into a remote desktop. 
 
 Just because it _can_ be done, it means it _should_ be done, right? 
 
