@@ -23,7 +23,7 @@ This **Remote - Tunnel** option is far better than running desktop VSCode on Ubu
 
 Nonetheless, here's the guide to install the desktop version of VSCode/VSCodium and then SSH into a remote desktop. 
 
-Because just because it _can_ be done, it means it _should_ be done, right?
+Because just because it _can_ be done, it means it _should_ be done, right? 🐒
 
 After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities.
 
