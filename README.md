@@ -11,7 +11,7 @@ While there are other methods like:
 
 What they all have in common is that they run in the browser. That's alright, but you can't do certain things like connect to a remote machine via SSH. Certain extensions are just not supported by web-based VSCode and remote-ssh is one of them. 
 
-But there's a catch. This attempt to install desktop VSCode on Android and then SSH-ing into a remote machine started as a proof-of-concept, but during the process, I found that Microsoft had already solved this with the [Remote - Tunnel](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) extension available on both desktop and web versions of VSCode. 
+But there's a catch. This attempt to install desktop VSCode on Android and then SSH-ing into a remote machine started as a proof-of-concept, but during the process, I found that Microsoft had already solved this with the [Remote - Tunnel](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) extension, available on both desktop and web versions of VSCode. 
 
 With this, a client can connect to a remote machine with [VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server) installed, via a secure tunnel (without using SSH!). The client can run code remotely, make changes on the remote machine in any browser that supports web apps like vscode.dev or GitHub codespaces, etc., making the whole process platform-independent.
 
