@@ -1,6 +1,6 @@
 # Visual Studio Code on Android + Remote Development via SSH (No root)
 
-Guide to run Visual Studio Code and/or VSCodium on Android.
+Guide to run Visual Studio Code and/or VSCodium on Android to remotely run code on a remote machine via SSH.
 
 **Android** > **Termux** > (proot) **Ubuntu** > **VSCode**/**VSCodium**
 
