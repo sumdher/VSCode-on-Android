@@ -28,7 +28,7 @@ In contrast, running desktop VSCode on Ubuntu proot-ed in Termux on Android is a
 
 Nonetheless, here's the Neanderthal guide to install the desktop version of VSCode/VSCodium and then SSH into a remote desktop. 
 
-Because just because it _can_ be done, it means it _should_ be done, right? 
+Just because it _can_ be done, it means it _should_ be done, right? 
 
 After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities.
 
