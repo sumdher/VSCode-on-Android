@@ -3,15 +3,18 @@
 Guide to run Visual Studio Code and/or VSCodium on Android.
 
 **Android** > **Termux** > (proot) **Ubuntu** > **VSCode**/**VSCodium**
-
+<!-- 
 While there are other methods like:
-1. Cloud-based, frontend-only: [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev/),
+1. Cloud-based, frontend-only: [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev/), [GitHub Codespaces](https://github.com/codespaces),
 2. Full backend, local execution: [code-server](https://github.com/coder/code-server) (on a proot distro), which opens in the browser,
 3. An app on the Play Store [VScode for Android](https://play.google.com/store/apps/details?id=dev.environment.VScode_PaidR1&hl=en), which basically is a webapp, putting it in the same category as 2.
 
-What they all have in common is that they run in the browser. That's alright, but you can't do certain things like connect to a remote machine via SSH and develop remotely. Certain extensions are just not supported by web-based VSCode and remote-ssh is one of them. 
+However, there's [Remote - Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server)
 
-After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities like remote development via SSH.
+What they all have in common is that they run in the browser. That's alright, but you can't do certain things like connect to a remote machine via SSH. Certain extensions are just not supported by web-based VSCode and remote-ssh is one of them. 
+-->
+
+After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities.
 
 ## Prerequisites
 
