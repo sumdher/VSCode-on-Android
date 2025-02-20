@@ -111,7 +111,7 @@ Select your desired resolution and it will start it at `localhost:1`.
 
 ## Also, you might want to set up: python, pip, etc.
 
-If not, skip directly to the [problems & fixes](#Problems-and-Fixes). 
+If not, skip directly to the [problems & fixes](#Problems-and-Fixes) section. 
 
 ### Run these in a terminal:
 
