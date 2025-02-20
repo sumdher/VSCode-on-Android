@@ -1,4 +1,4 @@
-# Visual Studio Code on Android (No root)
+# Visual Studio Code on Android + Remote Development via SSH (No root)
 
 Guide to run Visual Studio Code and/or VSCodium on Android.
 
