@@ -3,16 +3,25 @@
 Guide to run Visual Studio Code and/or VSCodium on Android.
 
 **Android** > **Termux** > (proot) **Ubuntu** > **VSCode**/**VSCodium**
-<!-- 
+
 While there are other methods like:
 1. Cloud-based, frontend-only: [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev/), [GitHub Codespaces](https://github.com/codespaces),
 2. Full backend, local execution: [code-server](https://github.com/coder/code-server) (on a proot distro), which opens in the browser,
 3. An app on the Play Store [VScode for Android](https://play.google.com/store/apps/details?id=dev.environment.VScode_PaidR1&hl=en), which basically is a webapp, putting it in the same category as 2.
 
-However, there's [Remote - Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server)
-
 What they all have in common is that they run in the browser. That's alright, but you can't do certain things like connect to a remote machine via SSH. Certain extensions are just not supported by web-based VSCode and remote-ssh is one of them. 
--->
+
+This attempt to install desktop VSCode on Android and then SSH-ing into a remote machine started as a proof-of-concept, but during the process, I found that Microsoft had already solved this with the [Remote - Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) extension. 
+
+With this, a client on any machine can connect to a remote machine with [VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server) installed, via a secure tunnel (without using SSH!). The client can run code remotely, make changes on the remote machine in any browser that supports web apps like vscode.dev or GitHub codespaces, etc.
+
+This **Remote - Tunnel** option is far better than running desktop VSCode on Ubuntu proot-ed in Termux on Android because of a couple of reasons: it’s much simpler, has far less latency compared to using a VNC desktop viewer for proot Ubuntu, lower power consumption,  and most importantly, because it's cool as 🗿. 
+
+[Here](https://www.youtube.com/watch?v=SyLHXdXhE1U) is a quick video by VSCode devs to get you started with **Remote - Tunnel** if you want to try it.
+
+---
+
+Nonetheless, here's the guide to install the desktop VSCode/VSCodium version and then SSH into a remote desktop, because just because it _can_ be done, it means it _should_ be done, right?
 
 After following this guide, you will be able to use the full-blown desktop app with all the desktop extensions and functionalities.
 
