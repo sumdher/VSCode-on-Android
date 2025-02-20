@@ -17,7 +17,7 @@ With this, a client can connect to a remote machine with [VS Code Server](https:
 
 This **Remote - Tunnel** option is far better than running desktop VSCode on Ubuntu proot-ed in Termux on Android because of a couple of reasons: it’s much simpler, has far less latency compared to using a VNC desktop viewer for proot Ubuntu, lower power consumption,  and most importantly, because it's cool as 🗿. 
 
-[Here](https://www.youtube.com/watch?v=SyLHXdXhE1U) is a quick video by VSCode devs to get you started with **Remote - Tunnel** if you want to try it.
+More info [here](https://code.visualstudio.com/docs/remote/tunnels) and [here](https://www.youtube.com/watch?v=SyLHXdXhE1U) is a quick video by VSCode devs to get you started with **Remote - Tunnel** if you want to try it.
 
 ---
 
