@@ -13,7 +13,7 @@ What they all have in common is that they run in the browser. That's alright, bu
 
 This attempt to install desktop VSCode on Android and then SSH-ing into a remote machine started as a proof-of-concept, but during the process, I found that Microsoft had already solved this with the [Remote - Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) extension. 
 
-With this, a client on any machine can connect to a remote machine with [VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server) installed, via a secure tunnel (without using SSH!). The client can run code remotely, make changes on the remote machine in any browser that supports web apps like vscode.dev or GitHub codespaces, etc.
+With this, a client can connect to a remote machine with [VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server) installed, via a secure tunnel (without using SSH!). The client can run code remotely, make changes on the remote machine in any browser that supports web apps like vscode.dev or GitHub codespaces, etc., making the whole process platform-independent.
 
 This **Remote - Tunnel** option is far better than running desktop VSCode on Ubuntu proot-ed in Termux on Android because of a couple of reasons: it’s much simpler, has far less latency compared to using a VNC desktop viewer for proot Ubuntu, lower power consumption,  and most importantly, because it's cool as 🗿. 
 
