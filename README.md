@@ -4,7 +4,10 @@ Guide to run Visual Studio Code and/or VSCodium on Android to remotely run code 
 
 **Android** > **Termux** > (proot) **Ubuntu** > **VSCode**/**VSCodium**
 
-While there are other methods like:
+## Other Methods
+
+While there are alternatives like:
+
 1. Cloud-based, frontend-only: [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev/), [GitHub Codespaces](https://github.com/codespaces),
 2. Full backend, local execution: [code-server](https://github.com/coder/code-server) (on a proot distro), which opens in the browser,
 3. An app on the Play Store [VScode for Android](https://play.google.com/store/apps/details?id=dev.environment.VScode_PaidR1&hl=en), which basically is a webapp, putting it in the same category as 2.
@@ -13,13 +16,15 @@ What they all have in common is that they run in the browser. That's alright, bu
 
 But there's a catch. This attempt to install desktop VSCode on Android and then SSH-ing into a remote machine started as a proof-of-concept, but during the process, I found that Microsoft had already solved this with the [Remote - Tunnel](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server) extension, available on both desktop and web versions of VSCode. 
 
-With this, a client can connect to a remote machine (with [VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server) installed on it), via a secure tunnel without using SSH! The client can run code remotely and make changes on the remote machine in any browser that supports web apps like vscode.dev or GitHub codespaces, etc., making the whole process platform-independent.
+With this, a client can connect to a remote machine (with [VS Code Server](https://code.visualstudio.com/docs/remote/vscode-server) installed on it), via a secure tunnel without using SSH! The client can run code remotely and make changes on the remote machine in any browser that supports web apps like vscode.dev or GitHub codespaces, etc., making the whole process platform-independent. Clearly, `Remote - Tunnel` takes the 🍰. 
 
-This **Remote - Tunnel** option is far better than running desktop VSCode on Ubuntu proot-ed in Termux on Android because of a couple of reasons: it’s much simpler, has far less latency compared to using a VNC desktop viewer for proot Ubuntu, lower power consumption,  and most importantly, because it's cool as 🗿. 
+In contrast, running desktop VSCode on Ubuntu proot-ed in Termux on Android is an inferior option because of a couple of reasons: `Remote - Tunnel` is much simpler, has far less latency compared to using a VNC desktop viewer for proot Ubuntu, cosumes lower power,  and most importantly, because it's cool as 🗿. 
 
-[Here](https://www.youtube.com/watch?v=SyLHXdXhE1U) is a quick video by VSCode devs to get you started with **Remote - Tunnel** if you want to try it. More info [here](https://code.visualstudio.com/docs/remote/tunnels).
+[Here](https://www.youtube.com/watch?v=SyLHXdXhE1U) is a quick video by VSCode devs to get you started with `Remote - Tunnel` if you want to try it. More info [here](https://code.visualstudio.com/docs/remote/tunnels).
 
 ---
+
+# The Guide
 
 Nonetheless, here's the Neanderthal guide to install the desktop version of VSCode/VSCodium and then SSH into a remote desktop. 
 
