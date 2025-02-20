@@ -335,13 +335,13 @@ Out of the box, there are no major issues with this. But there was something tha
 I had also installed the necessry SSH extensions in VSCode. 
 
 **The problem:**
-- It successfully connected SSH-ically to the remote computer, but it **fails to recognize existing kernels and virtual envs** in the remote computer.
+- It successfully connected SSH-ically to the remote machine, but it **fails to recognize existing kernels and virtual envs** in the remote machine.
 
 **The fix:**
-- After SSH-ing into the remote computer in VSCode, in the workspace directory, make a new directory `.vscode` and create a file in it `settings.json`.
+- After SSH-ing into the remote machine in VSCode, in the workspace directory, make a new directory `.vscode` and create a file in it `settings.json`.
 - In `settings.json`, add these lines:
 
-  > **Note:** Replace the path and version with the actual path of `venv` and its python version in the remote computer)
+  > **Note:** Replace the path and version with the actual path of `venv` and its python version in the remote machine)
   ```json
   {
       "python.defaultInterpreterPath":"<path>/<to>/your>/<venv>/bin/python<X>"
