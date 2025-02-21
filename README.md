@@ -81,7 +81,7 @@ Update packages:
     mkdir ubun22 && \
     cd ubun22
     ```
-  - Paste the copied command and it will install the distro in the pwd.
+  - Paste the copied command and run it. It will install the distro in the pwd.
   - Follow the on-screen instructions.
     > **Note:** The password you set for your user here during installation will also serve as the VNC password, that you will use to display the Ubuntu GUI.
 
