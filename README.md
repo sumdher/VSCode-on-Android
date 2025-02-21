@@ -76,13 +76,18 @@ Update packages:
   - Navigate to "**Andronix Modded OS**" and select "**Ubuntu XFCE**".
   - Complete the purchase to receive a download link with keys. The installation command will be automatically copied to the clipboard.
 - In **Termux**:
+  - Optionally, create a folder to manage distros:
+    ```bash
+    mkdir ubun22 && \
+    cd ubun22
+    ```
   - Paste the copied command and it will install the distro in the pwd.
   - Follow the on-screen instructions.
     > **Note:** The password you set for your user here during installation will also serve as your VNC password.
 
 ## Launching Ubuntu
 
-- In Termux, run the bash file that the above command generates (in the same directory):
+- In Termux, run the bash file that the above command generates (in the pwd, `ubun22`):
 
    ```bash
    ./start-andronix.sh
@@ -124,7 +129,7 @@ If not, skip directly to the [problems & fixes](#Problems-and-Fixes) section.
    ```bash
    sudo apt install -y software-properties-common
    ```
-- Add the Python PPA:
+- Add the Python PPA and install python<X.XX>:
    ```bash
    sudo add-apt-repository ppa:deadsnakes/ppa && \
    sudo apt update && \
