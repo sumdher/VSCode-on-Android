@@ -92,7 +92,7 @@ Update packages:
    ```bash
    ./start-andronix.sh
    ```
-Now you should be logged in as your user in Ubuntu.
+   Now you should be logged in as your user in Ubuntu and see `<user>@localhost:`.
 
 - Do the routine:
    ```bash
