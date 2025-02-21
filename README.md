@@ -87,8 +87,7 @@ Update packages:
   - After the installation, you will be logged into your user account in Ubuntu (CLI). You should see `<user>@localhost:`.
 
 ## Launching Ubuntu
-- Everytime you open Termux, you need to run the bash file to _start_ and log into Ubunutu.
-- If you did not close Termux after installation and see `<user>@localhost:`, skip the following command and continue.
+- Everytime you open Termux, you need to run the bash file to _start_ and log into Ubuntu. If you did not close **Termux** after installation and see `<user>@localhost:`, skip the following command and continue.
 - In Termux, run the bash file that the above command generates (in the pwd, `ubun22`):
    ```bash
    ./start-andronix.sh
