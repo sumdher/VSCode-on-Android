@@ -74,14 +74,14 @@ Update packages:
 
 - In **Andronix**:
   - Navigate to "**Andronix Modded OS**" and select "**Ubuntu XFCE**".
-  - Complete the purchase to receive a download link with keys. The installation command will be automatically copied to the clipboard.
+  - Complete the purchase to receive a download link with keys. The _installation command_ will be automatically copied to the clipboard.
 - In **Termux**:
   - Optionally, create a folder to manage distros:
     ```bash
     mkdir ubun22 && \
     cd ubun22
     ```
-  - Paste the copied command and run it. It will install the distro in the pwd.
+  - Paste the copied _installation command_ (you can recopy it from Andronix) and run it. It will install the distro in the pwd.
   - Follow the on-screen instructions.
     > **Note:** The password you set for your user here during installation will also serve as the VNC password, that you will use to display the Ubuntu GUI.
 
