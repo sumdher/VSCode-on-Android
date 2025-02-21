@@ -167,7 +167,7 @@ If not, skip directly to the [problems & fixes](#Problems-and-Fixes) section.
 
 # Problems and Fixes
 
-After launching the Ubuntu GUI (via `./start-andronix.sh` and `vncserver-start` and connecting to  `localhos:1`), you may notice that while many preinstalled applications work, some do not. In particular, Firefox and VSCode may require fixes.
+After launching the Ubuntu GUI, you may notice that while many preinstalled applications work, some do not. In particular, Firefox and VSCode may require fixes.
 
 ## Fixing Firefox
 
@@ -306,7 +306,8 @@ In **VSCode**/**VSCodium**, install any necessary packages as per your need like
 
 ## Fixing Jupyter Kernel Load error
 
-When working with Python notebooks in VSCode, you might encounter an error like:
+(Assuming you installed the necessary python packages: see [this section](#Also,-you-might-want-to-set-up:-python,-pip,-etc.))
+When working with Python notebooks in VSCode, you might encounter an error like: 
 ```diff
 - Failed to start the Kernel. 
 /home/<user>/<workspace>/<py_venv_dir>/lib/python3.11/site-packages/jupyter_client/localinterfaces.py:56: 
