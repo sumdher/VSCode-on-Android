@@ -137,9 +137,8 @@ To **properly** terminate the Ubuntu session, do the following:
 
 If not, skip directly to the [problems & fixes](#Problems-and-Fixes) section. 
 
-### Run these in a terminal:
-
-- Launch Ubuntu, start the VNC server and connect to VNC display if not already ([recap](#Launching-Ubuntu))
+- Launch Ubuntu: start the VNC server, connect to the VNC display ([recap](#Launching-Ubuntu)).
+- Open a terminal & run the following commands
 - Add a new repository to manage Python installations:
    ```bash
    sudo apt install -y software-properties-common
