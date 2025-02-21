@@ -133,7 +133,7 @@ To **properly** terminate the Ubuntu session, do the following:
    - That should log you out of Ubunutu and now you may close Termux (`CTRL+D`, `exit` or `logout` also work here)
 ---
 
-## Also, you might want to set up: python, pip, etc.
+## Also, you might want to set up: `python`, `pip`, etc.
 
 If not, skip directly to the [problems & fixes](#Problems-and-Fixes) section. 
 
