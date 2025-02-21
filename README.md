@@ -76,7 +76,7 @@ Update packages:
   - Navigate to "**Andronix Modded OS**" and select "**Ubuntu XFCE**".
   - Complete the purchase to receive a download link with keys. The _installation command_ will be automatically copied to the clipboard.
 - In **Termux**:
-  - Optionally, create a folder to manage distros:
+  - Optionally, create a directory where ou want the distro to be installed (handy to manage multiple distros):
     ```bash
     mkdir ubun22 && \
     cd ubun22
@@ -87,36 +87,50 @@ Update packages:
   - After the installation, you will be logged into your user account in Ubuntu (CLI). You should see `<user>@localhost:`.
 
 ## Launching Ubuntu
-- Everytime you open Termux, you need to run the bash file to _start_ and log into Ubuntu. If you did not close **Termux** after installation and see `<user>@localhost:`, skip the following command and continue.
+- Everytime you open Termux, you need to run a bash file to boot into Ubuntu. If you did not close **Termux** after the installation and see `<user>@localhost:`, skip the next step and continue.
 - In Termux, run the bash file that the above command generates (in the pwd, `ubun22`):
    ```bash
    ./start-andronix.sh
    ```
    Now you should be logged in as your user in Ubuntu and see `<user>@localhost:`.
-
-- Do the routine:
+  
+- Start the VNC Server for desktop GUI:
+   ```bash
+   vncserver-start
+   ```
+-  Update packages (only for the first run):
    ```bash
    sudo apt update && \
    sudo apt upgrade
    ```
-- Start the VNC Server:
-   ```bash
-   vncserver-start
-   ```
-Select your desired resolution and it will start it at `localhost:1`.
+
+Select your desired resolution and it will start VNC server it at `localhost:<port>`, default is `localhost:1`.
+- Do NOT close Termux
 
 ### In your preferred VNC Viewer app: 
 
 - Set the _address_ to `localhost:1`, and optionally give it a name.
 - Enter your user password to access it (the one you set during Ubuntu installation).
 - You should now see a Ubuntu desktop.
-  > **Tip:** If the display quality is poor or some icons do not load properly, **set** the **picture quality** to **high**.
-- When finished, stop the VNC server by running in the Ubuntu shell:
-  ```bash
+  > **Tip:** If the display quality is poor or some icons do not load properly, **set** the **picture quality** to **high** in **VNC app**.
+
+## Terminating the Ubuntu session
+To **properly** terminate the Ubuntu session, do the following:
+- Stop the VNC server
+  - Disconnect the VNC display in your **VNC viewer** app.
+  - In the Termux Ubuntu shell (same shell wehre you started the VNC server, `<user>@localhost:`),
+
+    Run:
+   ```bash
    vncserver-stop
    ```
-- More details [here](https://docs.andronix.app/vnc/vnc-basics).
-
+   Enter `1` and press enter to terminate the running VNC server at `localhost:1`.
+   > **Note:** If it run on a different **port**, enter that port instead of `1`. To verify, run `vncserver -list` which lists all the active VNC servers and the ports they are running on.
+   - More details [here](https://docs.andronix.app/vnc/vnc-basics).
+- Log out of the Ubuntu CLI.
+   - Option 1: Press `CTRL+D` in the terminal
+   - Option 2: Run either `exit` or `logout`
+   - That should log you out of Ubunutu and now you may close Termux (`CTRL+D`, `exit` or `logout` also work here)
 ---
 
 ## Also, you might want to set up: python, pip, etc.
@@ -125,6 +139,7 @@ If not, skip directly to the [problems & fixes](#Problems-and-Fixes) section.
 
 ### Run these in a terminal:
 
+- Launch Ubuntu, start the VNC server and connect to VNC display if not already (recap]
 - Add a new repository to manage Python installations:
    ```bash
    sudo apt install -y software-properties-common
