@@ -84,11 +84,12 @@ Update packages:
   - Paste the copied _installation command_ (you can recopy it from Andronix) and run it. It will install the distro in the pwd.
   - Follow the on-screen instructions.
     > **Note:** The password you set for your user here during installation will also serve as the VNC password, that you will use to display the Ubuntu GUI.
+  - After the installation, you will be logged into your user account in Ubuntu (CLI). You should see `<user>@localhost:`.
 
 ## Launching Ubuntu
-
+- Everytime you open Termux, you need to run the bash file to _start_ and log into Ubunutu.
+- If you did not close Termux after installation and see `<user>@localhost:`, skip the following command and continue.
 - In Termux, run the bash file that the above command generates (in the pwd, `ubun22`):
-
    ```bash
    ./start-andronix.sh
    ```
