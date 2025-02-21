@@ -306,7 +306,8 @@ In **VSCode**/**VSCodium**, install any necessary packages as per your need like
 
 ## Fixing Jupyter Kernel Load error
 
-(Assuming you installed the necessary python packages: see [this section](#Also,-you-might-want-to-set-up:-python,-pip,-etc.))
+(Assuming you installed the necessary python packages: see [this section](#Also-you-might-want-to-set-up-python-pip-etc))
+
 When working with Python notebooks in VSCode, you might encounter an error like: 
 ```diff
 - Failed to start the Kernel. 
